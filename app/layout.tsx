@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 // import { Inter } from 'next/font/google'
 import { Nunito } from 'next/font/google'
 import Navbar from './components/navbar/Navbar'
+import Modal from './components/Modals/Modal'
 
 // const inter = Inter({ subsets: ['latin'] }) --- This is the old font 
 
@@ -22,6 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={font.className}>
+        <Modal actionLabel="Submit" title='Try String HEHE'isOpen/>
         <Navbar/>
         {children}
         </body>
