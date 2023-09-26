@@ -6,6 +6,7 @@ import Navbar from './components/navbar/Navbar'
 // import Modal from './components/Modals/Modal'
 import RegisterModal from './components/Modals/RegisterModal'
 import ToasterProvider from './providers/ToasterProvider'
+import LoginModal from './components/Modals/LoginModal'
 
 // const inter = Inter({ subsets: ['latin'] }) --- This is the old font 
 
@@ -27,6 +28,7 @@ export default function RootLayout({
       <body className={font.className}>
         <ToasterProvider/>
         <RegisterModal/>
+        <LoginModal/>
         {/* <Modal actionLabel="Submit" title='Try String HEHE'isOpen/> */}
         <Navbar/>
         {children}
