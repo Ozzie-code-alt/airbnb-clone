@@ -37,3 +37,9 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 # Code Notes 
 
+Prisma was used (Again)
+
+- install it through npm  `npm install -D prisma --save` --save is needed here in my case because it uninstalls other packages randomly 
+after installing prisma we can proceed with `npx prisma init` to initialize and it will generate a folder in root named prisma  and an env file 
+
+
