@@ -5,6 +5,7 @@ import { Nunito } from 'next/font/google'
 import Navbar from './components/navbar/Navbar'
 // import Modal from './components/Modals/Modal'
 import RegisterModal from './components/Modals/RegisterModal'
+import ToasterProvider from './providers/ToasterProvider'
 
 // const inter = Inter({ subsets: ['latin'] }) --- This is the old font 
 
@@ -24,6 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={font.className}>
+        <ToasterProvider/>
         <RegisterModal/>
         {/* <Modal actionLabel="Submit" title='Try String HEHE'isOpen/> */}
         <Navbar/>
