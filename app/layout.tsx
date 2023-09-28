@@ -8,6 +8,7 @@ import RegisterModal from './components/Modals/RegisterModal'
 import ToasterProvider from './providers/ToasterProvider'
 import LoginModal from './components/Modals/LoginModal'
 import getCurrentUser from './actions/getCurrentUser'
+import RentModal from './components/Modals/RentModal'
 
 // const inter = Inter({ subsets: ['latin'] }) --- This is the old font 
 
@@ -29,6 +30,7 @@ export default async function RootLayout({
     <html lang="en">
       <body className={font.className}>
         <ToasterProvider/>
+        <RentModal/>
         <RegisterModal/>
         <LoginModal/>
         {/* <Modal actionLabel="Submit" title='Try String HEHE'isOpen/> */}
