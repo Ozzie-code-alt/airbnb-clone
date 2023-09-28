@@ -5,7 +5,7 @@ import { toast } from "react-hot-toast";
 
 import { SafeUser } from "@/app/types";
 
-import useLoginModal from "./useLoginrModal";
+import useLoginModal from "./useLoginModal";
 
 interface IUseFavorite {
   listingId: string;
