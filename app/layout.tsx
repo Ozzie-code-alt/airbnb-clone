@@ -1,42 +1,48 @@
-import './globals.css'
-import type { Metadata } from 'next'
-// import { Inter } from 'next/font/google'
 import { Nunito } from 'next/font/google'
-import Navbar from './components/navbar/Navbar'
-// import Modal from './components/Modals/Modal'
-import RegisterModal from './components/Modals/RegisterModal'
-import ToasterProvider from './providers/ToasterProvider'
-import LoginModal from './components/Modals/LoginModal'
-import getCurrentUser from './actions/getCurrentUser'
-import RentModal from './components/Modals/RentModal'
 
-// const inter = Inter({ subsets: ['latin'] }) --- This is the old font 
+import Navbar from '@/app/components/navbar/Navbar';
+import LoginModal from './components/Modals/LoginModal';
+import RegisterModal from './components/Modals/RegisterModal';
+import SearchModal from '@/app/components/modals/SearchModal';
+import RentModal from './components/Modals/RentModal';
 
-export const metadata: Metadata = { // this is a constant layout file where we can change the titles etc 
+import ToasterProvider from '@/app/providers/ToasterProvider';
+
+import './globals.css'
+import ClientOnly from './components/ClientOnly';
+import getCurrentUser from './actions/getCurrentUser';
+
+export const metadata = {
   title: 'Airbnb',
-  description: 'Airbnb clone',
+  description: 'Airbnb Clone',
 }
 
-const font = Nunito({
-  subsets:["latin"]
-})
+const font = Nunito({ 
+  subsets: ['latin'], 
+});
+
 export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
-  const currentUser = await getCurrentUser()
+  const currentUser = await getCurrentUser();
+
   return (
     <html lang="en">
       <body className={font.className}>
-        <ToasterProvider/>
-        <RentModal/>
-        <RegisterModal/>
-        <LoginModal/>
-        {/* <Modal actionLabel="Submit" title='Try String HEHE'isOpen/> */}
-        <Navbar currentUser ={currentUser}/>
-        {children}
-        </body>
+        <ClientOnly>
+          <ToasterProvider />
+          <LoginModal />
+          <RegisterModal />
+          <SearchModal />
+          <RentModal />
+          <Navbar currentUser={currentUser} />
+        </ClientOnly>
+        <div className="pb-20 pt-28">
+          {children}
+        </div>
+      </body>
     </html>
   )
 }
