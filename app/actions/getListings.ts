@@ -91,6 +91,7 @@ export default async function getListings(
 
     return safeListings;
   } catch (error: any) {
+    console.log("this is the error", error)
     throw new Error(error);
   }
 }

@@ -20,6 +20,7 @@
     "date-fns": "^2.30.0",
     "eslint": "8.49.0",
     "eslint-config-next": "13.4.19",
+    "fs": "^0.0.1-security",
     "leaflet": "^1.9.4",
     "next": "13.4.19",
     "next-auth": "^4.23.1",
@@ -45,5 +46,6 @@
     "@types/leaflet": "^1.9.6",
     "@types/react-date-range": "^1.4.5",
     "prisma": "^5.3.1"
-  }
+  },
+  "packageManager": "yarn@1.22.21+sha1.1959a18351b811cdeedbd484a8f86c3cc3bbaf72"
 }
